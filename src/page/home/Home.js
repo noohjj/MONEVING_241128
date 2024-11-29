@@ -22,7 +22,7 @@ const Text = styled.div`
   color: #0f70b7;
 `;
 
-const Button = styled.div`
+const Button = styled.button`
   width: 150px;
   height: 60px;
   display: flex;
@@ -35,6 +35,7 @@ const Button = styled.div`
   margin-top: 30px;
   font-size: 20px;
   font-weight: 900;
+  cursor: pointer;
 `;
 
 const Home = () => {

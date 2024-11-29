@@ -1,11 +1,42 @@
 import { styled } from "styled-components";
 import { useForm } from "react-hook-form";
 
-const Container = styled.div``;
+const Container = styled.div`
+  width: 100%;
+  height: 92vh;
+`;
 
-const Wrap = styled.div``;
+const Wrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 250px;
+`;
 
-const Form = styled.form``;
+const Form = styled.form`
+  width: 380px;
+  height: 160px;
+  border: 2px solid rgba(179, 210, 217, 0.7);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  input {
+    width: 300px;
+    height: 40px;
+    border: 1px solid rgba(122, 122, 122, 0.7);
+    border-radius: 20px;
+  }
+`;
+
+const Text = styled.div`
+  font-size: 25px;
+  margin-bottom: 10px;
+`;
+
+const Button = styled.button``;
 
 const ErrorMessage = styled.div``;
 
@@ -24,6 +55,7 @@ const Name = () => {
     <Container>
       <Wrap>
         <Form onSubmit={handleSubmit(nameHandler)}>
+          <Text>닉네임 입력</Text>
           <input
             {...register("username", {
               required: "닉네임을 입력해주세요",
@@ -32,6 +64,7 @@ const Name = () => {
             placeholder="닉네임을 입력해주세요"
           />
           <ErrorMessage>{errors?.username?.message}</ErrorMessage>
+          <Button>NEXT</Button>
         </Form>
       </Wrap>
     </Container>
