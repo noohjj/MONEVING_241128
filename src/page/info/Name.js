@@ -16,7 +16,7 @@ const Wrap = styled.div`
 
 const Form = styled.form`
   width: 380px;
-  height: 160px;
+  height: 200px;
   border: 2px solid rgba(179, 210, 217, 0.7);
   border-radius: 30px;
   display: flex;
@@ -24,21 +24,36 @@ const Form = styled.form`
   justify-content: center;
   align-items: center;
   input {
+    padding: 10px;
     width: 300px;
     height: 40px;
-    border: 1px solid rgba(122, 122, 122, 0.7);
+    border: 1px solid rgba(122, 122, 122, 0.6);
     border-radius: 20px;
   }
 `;
 
 const Text = styled.div`
   font-size: 25px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  opacity: 0.6;
+  font-weight: 600;
 `;
 
-const Button = styled.button``;
+const Button = styled.button`
+  margin-top: 20px;
+  width: 90px;
+  height: 40px;
+  color: white;
+  background-color: rgba(58, 146, 218, 0.7);
+  border-radius: 20px;
+  border: 0px solid white;
+  cursor: pointer;
+`;
 
-const ErrorMessage = styled.div``;
+const ErrorMessage = styled.div`
+  margin-top: 10px;
+  color: lightgray;
+`;
 
 const Name = () => {
   const {
