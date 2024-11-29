@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   width: 100%;
@@ -79,7 +80,10 @@ const Name = () => {
             placeholder="닉네임을 입력해주세요"
           />
           <ErrorMessage>{errors?.username?.message}</ErrorMessage>
-          <Button>NEXT</Button>
+
+          <Link to={"/money"}>
+            <Button>NEXT</Button>
+          </Link>
         </Form>
       </Wrap>
     </Container>
