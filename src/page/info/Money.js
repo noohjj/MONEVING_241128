@@ -17,7 +17,7 @@ const Wrap = styled.div`
 `;
 
 const Form = styled.form`
-  width: 380px;
+  width: 320px;
   height: 200px;
   border: 2px solid rgba(179, 210, 217, 0.7);
   border-radius: 30px;
