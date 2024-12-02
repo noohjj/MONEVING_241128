@@ -120,7 +120,7 @@ const TransactionWrapper = styled.div`
   background-color: ${(props) =>
     props.type === "income" ? "#3a92da" : "#ff0004"};
   opacity: 0.6;
-  padding: 5px;
+  padding: 5px 10px;
   height: 80px;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -139,14 +139,19 @@ const TransactionWrapper = styled.div`
   }
 `;
 
+const CButtonWrap = styled.div``;
+
+const TInputWrap = styled.div`
+  margin-top: 2px;
+`;
+
 const WButton = styled.button`
   all: unset;
   color: white;
   font-size: 17px;
-  padding: 5px 10px;
+  padding: 2px 10px;
   border-radius: 5px;
   cursor: pointer;
-  margin-bottom: -5px;
 
   &:hover {
     opacity: 0.8;
@@ -190,7 +195,7 @@ const Transaction = ({ transaction, onDelete, onUpdate }) => {
   return (
     <TransactionWrapper type={transaction.type}>
       {isEditing ? (
-        <div>
+        <TInputWrap>
           <input
             name="description"
             value={editData.description}
@@ -201,7 +206,7 @@ const Transaction = ({ transaction, onDelete, onUpdate }) => {
             value={editData.amount}
             onChange={handleEditChange}
           />
-        </div>
+        </TInputWrap>
       ) : (
         <div>
           {transaction.description}
@@ -210,14 +215,14 @@ const Transaction = ({ transaction, onDelete, onUpdate }) => {
           {transaction.amount.toLocaleString()}원
         </div>
       )}
-      <div>
+      <CButtonWrap>
         {isEditing ? (
           <WButton onClick={handleSave}>저장</WButton>
         ) : (
           <WButton onClick={() => setIsEditing(true)}>수정</WButton>
         )}
         <DeleteButton onClick={onDelete}>삭제</DeleteButton>
-      </div>
+      </CButtonWrap>
     </TransactionWrapper>
   );
 };
