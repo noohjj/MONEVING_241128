@@ -29,6 +29,7 @@ const Button = styled.button`
   justify-content: center;
   align-items: center;
   text-align: center;
+  border: 0px solid white;
   background-color: rgba(58, 146, 218, 0.7);
   border-radius: 20px;
   color: white;

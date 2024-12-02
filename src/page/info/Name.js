@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   width: 100%;
@@ -24,6 +24,7 @@ const Form = styled.form`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: white;
   input {
     padding: 10px;
     width: 300px;
@@ -60,11 +61,13 @@ const Name = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
   } = useForm();
+  const navigate = useNavigate(); // 페이지 이동을 위한 Hook
 
-  const nameHandler = (username) => {
-    localStorage.setItem("username", username);
+  const nameHandler = (data) => {
+    localStorage.setItem("username", data.username); // localStorage에 저장
+    navigate("/money"); // Money.js로 이동
   };
 
   return (
@@ -80,10 +83,7 @@ const Name = () => {
             placeholder="닉네임을 입력해주세요"
           />
           <ErrorMessage>{errors?.username?.message}</ErrorMessage>
-
-          <Link to={"/money"}>
-            <Button>NEXT</Button>
-          </Link>
+          <Button type="submit">NEXT</Button>
         </Form>
       </Wrap>
     </Container>
